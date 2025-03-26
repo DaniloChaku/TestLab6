@@ -56,3 +56,14 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+
+    - name: Count lines of code with Cloc
+      run: |
+        sudo apt-get update && sudo apt-get install -y cloc
+        cloc src/ > cloc-report.txt
+        cat cloc-report.txt
+
+    - name: SonarQube Analysis
+      uses: SonarSource/sonarqube-scan-action@v5
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
