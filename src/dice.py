@@ -117,7 +117,7 @@ def parse_input(input_string):
     raise ValueError("Please enter a number from 1 to 6.")
 
 if __name__ == "__main__":
-    num_dice_input = input("How many dice do you want to roll? [1-6] ")
+    num_dice_input = input("How many dice do you want to roll? [ 1-6 ] ")
     num_dice = parse_input(num_dice_input)
     roll_results = roll_dice(num_dice)
     dice_face_diagram = generate_dice_faces_diagram(roll_results)
