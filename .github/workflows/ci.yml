@@ -27,7 +27,8 @@ jobs:
     
     - name: Run tests with unittest
       run: |
-        python -m unittest discover -s tests -p "test_*.py" -v
+        coverage run -m unittest discover -s tests -p "test_*.py" -v
+        coverage xml  # Generate XML report (for SonarQube)
 
   review-check:
     runs-on: ubuntu-latest
