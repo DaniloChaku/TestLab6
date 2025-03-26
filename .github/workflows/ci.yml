@@ -67,3 +67,17 @@ jobs:
       uses: SonarSource/sonarqube-scan-action@v5
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    
+    - name: Запуск flake8 через Reviewdog
+      uses: reviewdog/action-flake8@v2
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        reporter: github-pr-review
+        level: error
+
+    - name: Запуск Black через Reviewdog
+      uses: reviewdog/action-black@v1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        reporter: github-pr-review
+        level: info
