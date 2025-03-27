@@ -48,6 +48,7 @@ DIE_HEIGHT = len(DICE_ART[1])
 DIE_WIDTH = len(DICE_ART[1][0])
 DIE_FACE_SEPARATOR = " "
 
+
 def generate_dice_faces_diagram(dice_values):
     """Return an ASCII diagram of dice faces from `dice_values`.
 
